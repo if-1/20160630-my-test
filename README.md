@@ -6,3 +6,13 @@
 ###### space to put a '6######'
 no heading using 7 #######
 
+```javascript
+var oldUnload = window.onbeforeunload;
+window.onbeforeunload = function() {
+    saveCoverage();
+    if (oldUnload) {
+        return oldUnload.apply(this, arguments);
+    }
+};
+```
+
